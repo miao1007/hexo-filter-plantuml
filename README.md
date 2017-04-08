@@ -12,7 +12,7 @@ npm install --save hexo-filter-plantuml
 
 Define the UML as bellow:
 
-    ```plum
+    ```puml
     @startuml
     class A
     @enduml
