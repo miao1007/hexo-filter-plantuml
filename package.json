@@ -1,0 +1,27 @@
+{
+  "name": "hexo-filter-plantuml",
+  "version": "1.0.0",
+  "description": "Using PlantUML to generate UML Diagram for hexo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+      "hexo",
+      "filter",
+      "plantuml",
+      "markdown"
+  ],
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/wafer-li/hexo-filter-plantuml.git"
+  },
+  "author": {
+      "name": "wafer-li",
+      "email": "omyshokami@gmail.com"
+  },
+  "bugs": {
+      "url": "https://github.com/wafer-li/hexo-filter-plantuml/issues"
+  },
+  "license": "MIT"
+}
