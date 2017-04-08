@@ -1,6 +1,6 @@
 {
   "name": "hexo-filter-plantuml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Using PlantUML to generate UML Diagram for hexo",
   "main": "index.js",
   "scripts": {
