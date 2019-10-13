@@ -29,10 +29,12 @@ plantuml:
     # the server,you can change your self-hosted sever for privacy
     # only works with render with <PlantUMLServer> on
     server: "http://www.plantuml.com/plantuml"
-    # "inline": <img src='data:image/svg+xml;base64> 
+    # "inline": <svg>xxx<svg/>
+    # "inlineUrlEncode": <img src='data:image/svg+xml;> 
+    # "inlineBase64": <img src='data:image/svg+xml;base64> 
     # "localLink": <img src="/assert/puml/xxxx.svg">
     # "externalLink": <img src="http://www.plantuml.com/plantuml/svg/xxx">
-    inline: "inline"
+    link: "inline"
 
     # only works with render with <Local> on
     # where your dot binary
