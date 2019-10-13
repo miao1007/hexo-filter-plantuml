@@ -2,7 +2,7 @@ const plantumlRender = require("./lib/plantumlRender");
 
 hexo.config.plantuml = Object.assign(plantumlRender.config, hexo.config.plantuml);
 
-var reg = /^```p(?:(?:lant)?)uml((.*[\r\n]+)+?)?```$/im;
+const reg = /(\s*)(```) *(puml|plantuml) *\n?([\s\S]+?)\s*(\2)(\n+|$)/g;
 
 function ignore(data) {
     let source = data.source;
