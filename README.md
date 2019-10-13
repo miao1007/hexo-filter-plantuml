@@ -11,33 +11,37 @@ npm install --save hexo-filter-plantuml
 ## Configuration
 
 
-minum
+minimum configuration(use plantuml.com for renderding)
+
 ```yaml
 plantuml:
     render: "PlantUMLServer"
 ```
 
-advanced
+advanced configuration
+
 
 ```yaml
 plantuml:
-    //  Local and PlantUMLServer.
-    render: "PlantUMLServer",
+    #  Local or PlantUMLServer.
+    render: "PlantUMLServer"
 
-    // only works with PlantUMLServer
-    server: "http://www.plantuml.com/plantuml",
-    // create <img src='data:image/svg+xml;base64> or <img src="/xxx.svg"> or <img src="http://third/svg/xxx">
-    // "inline","localLink","externalLink",
-    inline: "inline",
+    # the server,you can change your self-hosted sever for privacy
+    # only works with render with <PlantUMLServer> on
+    server: "http://www.plantuml.com/plantuml"
+    # "inline": <img src='data:image/svg+xml;base64> 
+    # "localLink": <img src="/assert/puml/xxxx.svg">
+    # "externalLink": <img src="http://www.plantuml.com/plantuml/svg/xxx">
+    inline: "inline"
 
-    // only works with Local
-    // where your dot binary
-    GraphvizDotFile: "/usr/local/bin/dot",
-    // where your jar
-    PlantJar: "/usr/local/Cellar/plantuml/1.2019.10/libexec/plantuml.jar",
+    # only works with render with <Local> on
+    # where your dot binary
+    GraphvizDotFile: "/usr/local/bin/dot"
+    # where your jar
+    PlantJar: "/usr/local/Cellar/plantuml/1.2019.10/libexec/plantuml.jar"
 
-    // common options
-    outputFormat: "svg", //svg/png
+    # common options: svg/png
+    outputFormat: "svg"
 ```
 
 ## Usage
