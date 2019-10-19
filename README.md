@@ -1,25 +1,42 @@
-# hexo-filter-plantuml
+## Features
 
-> Using PlantUML to generate UML Diagram for hexo
+* Generate raw/base64/urlencoded svg at compile time, no external css and js required.
+* Privacy guarantee. Support rendering locally or self-hosted server.
+* Zero npm dependencies.
+
+## How Does it work
+
+```
+1. Your PlantUML string quote with puml
+2. Local or service side rendering
+3. SVG(XML)
+4. inline or external <img src='data:image/xxx'>
+```
+
+
 
 ## Install
 
-```
-npm install --save hexo-filter-plantuml
+```sh
+npm install --save https://github.com/miao1007/hexo-filter-plantuml
 ```
 
 ## Configuration
 
+#### Minimum configuration
 
-minimum configuration(use plantuml.com for renderding)
+Use plantuml.com for renderding, and the base64-encoding image will be inlined in html.
 
 ```yaml
 plantuml:
     render: "PlantUMLServer"
 ```
 
-advanced configuration
+#### Advanced configuration
 
+Server-side
+
+Please keep in mind, if you want more about privacy/safety, please replace your own self-hosted render server.
 
 ```yaml
 plantuml:
@@ -27,7 +44,6 @@ plantuml:
     render: "PlantUMLServer"
 
     # the server,you can change your self-hosted sever for privacy
-    # only works with render with <PlantUMLServer> on
     server: "http://www.plantuml.com/plantuml"
     # "inline": <svg>xxx<svg/>
     # "inlineUrlEncode": <img src='data:image/svg+xml;> 
@@ -36,7 +52,23 @@ plantuml:
     # "externalLink": <img src="http://www.plantuml.com/plantuml/svg/xxx">
     link: "inline"
 
-    # only works with render with <Local> on
+    # common options: svg/png
+    outputFormat: "svg"
+```
+
+Client-side
+
+```yaml
+plantuml:
+    #  Local or PlantUMLServer.
+    render: "Local"
+
+    # "inline": <svg>xxx<svg/>
+    # "inlineUrlEncode": <img src='data:image/svg+xml;> 
+    # "inlineBase64": <img src='data:image/svg+xml;base64> 
+    # "localLink": <img src="/assert/puml/xxxx.svg">
+    link: "inline"
+
     # where your dot binary
     GraphvizDotFile: "/usr/local/bin/dot"
     # where your jar
@@ -46,21 +78,36 @@ plantuml:
     outputFormat: "svg"
 ```
 
-## Usage
 
-Define the UML as bellow:
 
-    ```puml
-    @startuml
-    class A
-    @enduml
-    ```
+## How to use it?
 
-And it will render as:
+```
+{% plantuml %}
+@startuml
+Object <|-- ArrayList
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+@enduml
+{% endplantuml %}
+```
 
-![](http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKhEIImkLd3aSaZDIm7o0G00)
+> `@startuml` and `@endpuml` are ALWAYS required or the image will fail to be generated.
 
-## Thanks to
+or
 
-- [hexo-filter-flowchart](https://github.com/bubkoo/hexo-filter-flowchart) [@bubkoo](https://github.com/bubkoo)
-- [hexo-tag-plantuml](https://github.com/oohcoder/hexo-tag-plantuml) [@oohcoder](https://github.com/oohcoder)
+```
+​```puml
+@startuml
+Object <|-- ArrayList
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+@enduml
+​```
+```
+
+Plugin will pick up block body and replace it with generated base64 svg diagram.
+
+> `puml` and `plantuml` tags both work.
