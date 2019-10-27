@@ -1,3 +1,11 @@
+
+
+@wafer-li 's hexo-filter-plantuml has been transfered to me duo to maintain issues.
+
+
+------
+
+
 ## Features
 
 * Generate raw/base64/urlencoded svg at compile time, no external css and js required.
@@ -6,13 +14,7 @@
 
 ## How Does it work
 
-```
-1. Your PlantUML string quote with puml
-2. Local or service side rendering
-3. SVG(XML)
-4. inline or external <img src='data:image/xxx'>
-```
-
+<img src="http://www.plantuml.com/plantuml/png/JOuxpi9038JxFSMK_rzmWHGe5L0a4WA1Q2F52fOsDZXUoF79YeUs7FkRHprvPvx667OqArPhx6CQM2fiD4c_g4xyr3QOt5W6t9CwuSb-nIsxtdJs7KXwoaprOQSWcTK7MVdi5VPLuNSlcu_dxT-bRVwBy3ok0aja8QY1PYUJBeB78THBoBBb1G00"/>
 
 
 ## Install
@@ -21,22 +23,20 @@
 npm install --save https://github.com/miao1007/hexo-filter-plantuml
 ```
 
-## Configuration
+## Minimum configuration
 
-#### Minimum configuration
-
-Use plantuml.com for renderding, and the base64-encoding image will be inlined in html.
+It will use `plantuml.com` for rendering, and the base64-encoded images will be inlined in the html.
 
 ```yaml
 plantuml:
     render: "PlantUMLServer"
 ```
 
-#### Advanced configuration
+## Advanced configuration
 
-Server-side
+#### Server-side(recommend)
 
-Please keep in mind, if you want more about privacy/safety, please replace your own self-hosted render server.
+Please keep in mind, if you want more about privacy/safety, please replace your own [self-hosted](https://github.com/plantuml/plantuml-server) render server.
 
 ```yaml
 plantuml:
@@ -56,7 +56,7 @@ plantuml:
     outputFormat: "svg"
 ```
 
-Client-side
+#### Client-side
 
 ```yaml
 plantuml:
@@ -111,3 +111,5 @@ ArrayList : size()
 Plugin will pick up block body and replace it with generated base64 svg diagram.
 
 > `puml` and `plantuml` tags both work.
+
+see more details at <http://plantuml.com/sitemap-language-specification>
