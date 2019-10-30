@@ -1,9 +1,11 @@
 
 
-@wafer-li 's hexo-filter-plantuml has been transfered to me duo to maintain issues.
+@wafer-li 's hexo-filter-plantuml has been [transfered](https://github.com/miao1007/hexo-filter-plantuml/pull/3) to me duo to maintain issues.
 
 
 ------
+[![version](https://img.shields.io/npm/v/hexo-filter-plantuml.svg)](https://www.npmjs.com/package/hexo-filter-plantuml)
+[![download](https://img.shields.io/npm/dm/hexo-filter-plantuml.svg)](https://www.npmjs.com/package/hexo-filter-plantuml)
 
 
 ## Features
@@ -20,7 +22,7 @@
 ## Install
 
 ```sh
-npm install --save https://github.com/miao1007/hexo-filter-plantuml
+npm install --save hexo-filter-plantuml
 ```
 
 ## Minimum configuration
