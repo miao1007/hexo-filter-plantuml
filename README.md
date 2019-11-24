@@ -11,7 +11,7 @@
 ## Features
 
 * Generate raw/base64/urlencoded svg at compile time, no external css and js required.
-* Privacy guarantee. Support rendering locally or self-hosted server.
+* Privacy guaranteed. Support rendering locally or self-hosting server.
 * Zero npm dependencies.
 
 ## How Does it work
@@ -27,7 +27,7 @@ npm install --save hexo-filter-plantuml
 
 ## Minimum configuration
 
-It will use `plantuml.com` for rendering, and the base64-encoded images will be inlined in the html.
+It will send your text to `plantuml.com` for rendering, and the base64-encoded images will be inlined in the html.
 
 ```yaml
 plantuml:
@@ -38,7 +38,7 @@ plantuml:
 
 #### Server-side(recommend)
 
-Please keep in mind, if you want more about privacy/safety, please replace your own [self-hosted](https://github.com/plantuml/plantuml-server) render server.
+Please keep in mind, if you want more about privacy/safety, please replace your own [self-hosting](https://github.com/plantuml/plantuml-server) render server.
 
 ```yaml
 plantuml:
@@ -59,6 +59,7 @@ plantuml:
 ```
 
 #### Client-side
+It may be slower for plantuml.jar will restart JVM per code fragment.
 
 ```yaml
 plantuml:
