@@ -1,5 +1,3 @@
-
-
 @wafer-li 's hexo-filter-plantuml has been [transfered](https://github.com/miao1007/hexo-filter-plantuml/pull/3) to me duo to maintain issues.
 
 
@@ -31,7 +29,7 @@ It will send your text to `plantuml.com` for rendering, and the base64-encoded i
 
 ```yaml
 plantuml:
-    render: "PlantUMLServer"
+  render: "PlantUMLServer"
 ```
 
 ## Advanced configuration
@@ -42,20 +40,20 @@ Please keep in mind, if you want more about privacy/safety, please replace your 
 
 ```yaml
 plantuml:
-    #  Local or PlantUMLServer.
-    render: "PlantUMLServer"
+  #  Local or PlantUMLServer.
+  render: "PlantUMLServer"
 
-    # the server,you can change your self-hosted sever for privacy
-    server: "http://www.plantuml.com/plantuml"
-    # "inline": <svg>xxx<svg/>
-    # "inlineUrlEncode": <img src='data:image/svg+xml;> 
-    # "inlineBase64": <img src='data:image/svg+xml;base64> 
-    # "localLink": <img src="/assert/puml/xxxx.svg">
-    # "externalLink": <img src="http://www.plantuml.com/plantuml/svg/xxx">
-    link: "inline"
+  # the server,you can change your self-hosted sever for privacy
+  server: "http://www.plantuml.com/plantuml"
+  # "inline": <svg>xxx<svg/>
+  # "inlineUrlEncode": <img src='data:image/svg+xml;> 
+  # "inlineBase64": <img src='data:image/svg+xml;base64> 
+  # "localLink": <img src="/assert/puml/xxxx.svg">
+  # "externalLink": <img src="http://www.plantuml.com/plantuml/svg/xxx">
+  link: "inline"
 
-    # common options: svg/png
-    outputFormat: "svg"
+  # common options: svg/png
+  outputFormat: "svg"
 ```
 
 #### Client-side
@@ -63,22 +61,22 @@ It may be slower for plantuml.jar will restart JVM per code fragment.
 
 ```yaml
 plantuml:
-    #  Local or PlantUMLServer.
-    render: "Local"
+  #  Local or PlantUMLServer.
+  render: "Local"
 
-    # "inline": <svg>xxx<svg/>
-    # "inlineUrlEncode": <img src='data:image/svg+xml;> 
-    # "inlineBase64": <img src='data:image/svg+xml;base64> 
-    # "localLink": <img src="/assert/puml/xxxx.svg">
-    link: "inline"
+  # "inline": <svg>xxx<svg/>
+  # "inlineUrlEncode": <img src='data:image/svg+xml;> 
+  # "inlineBase64": <img src='data:image/svg+xml;base64> 
+  # "localLink": <img src="/assert/puml/xxxx.svg">
+  link: "inline"
 
-    # where your dot binary
-    GraphvizDotFile: "/usr/local/bin/dot"
-    # where your jar
-    PlantJar: "/usr/local/Cellar/plantuml/1.2019.10/libexec/plantuml.jar"
+  # where your dot binary
+  GraphvizDotFile: "/usr/local/bin/dot"
+  # where your jar
+  PlantJar: "/usr/local/Cellar/plantuml/1.2019.10/libexec/plantuml.jar"
 
-    # common options: svg/png
-    outputFormat: "svg"
+  # common options: svg/png
+  outputFormat: "svg"
 ```
 
 
@@ -108,7 +106,7 @@ Object : equals()
 ArrayList : Object[] elementData
 ArrayList : size()
 @enduml
-​```
+```
 ```
 
 Plugin will pick up block body and replace it with generated base64 svg diagram.
@@ -116,3 +114,4 @@ Plugin will pick up block body and replace it with generated base64 svg diagram.
 > `puml` and `plantuml` tags both work.
 
 see more details at <http://plantuml.com/sitemap-language-specification>
+```
