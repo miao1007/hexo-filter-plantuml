@@ -5,6 +5,7 @@
 [![version](https://img.shields.io/npm/v/hexo-filter-plantuml.svg)](https://www.npmjs.com/package/hexo-filter-plantuml)
 [![download](https://img.shields.io/npm/dm/hexo-filter-plantuml.svg)](https://www.npmjs.com/package/hexo-filter-plantuml)
 
+> I have created another hexo plugin called [hexo-filter-kroki](https://github.com/miao1007/hexo-filter-kroki), which supports 20+ diagrams (including plantuml).
 
 ## Features
 
@@ -36,14 +37,16 @@ plantuml:
 
 #### Server-side(recommend)
 
-Please keep in mind, if you want more about privacy/safety, please replace your own [self-hosting](https://github.com/plantuml/plantuml-server) render server.
+Please keep in mind, if you want more about privacy/safety, please replace your own [self-hosting](https://plantuml.com/en/picoweb) render server.
 
 ```yaml
 plantuml:
   #  Local or PlantUMLServer.
   render: "PlantUMLServer"
 
-  # the server,you can change your self-hosted sever for privacy
+  # The render server, you can also create your self-hosting sever
+  # self-hosting cmd: java -jar /usr/local/Cellar/plantuml/1.2021.5/libexec/plantuml.jar -picoweb
+  # server: http://localhost:8080/plantuml
   server: "http://www.plantuml.com/plantuml"
   # "inline": <svg>xxx<svg/>
   # "inlineUrlEncode": <img src='data:image/svg+xml;> 
@@ -73,7 +76,7 @@ plantuml:
   # where your dot binary
   GraphvizDotFile: "/usr/local/bin/dot"
   # where your jar
-  PlantJar: "/usr/local/Cellar/plantuml/1.2019.10/libexec/plantuml.jar"
+  PlantJar: "/usr/local/Cellar/plantuml/1.2021.5/libexec/plantuml.jar",
 
   # common options: svg/png
   outputFormat: "svg"
@@ -82,6 +85,22 @@ plantuml:
 
 
 ## How to use it?
+
+`puml` and `plantuml` directives both work.
+```
+​```plantuml
+@startuml
+Object <|-- ArrayList
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+@enduml
+​```
+```
+ 
+> `@startuml` and `@endpuml` are ALWAYS required or the image will fail to be generated.
+
+or
 
 ```
 {% plantuml %}
@@ -94,24 +113,7 @@ ArrayList : size()
 {% endplantuml %}
 ```
 
-> `@startuml` and `@endpuml` are ALWAYS required or the image will fail to be generated.
-
-or
-
-```
-​```puml
-@startuml
-Object <|-- ArrayList
-Object : equals()
-ArrayList : Object[] elementData
-ArrayList : size()
-@enduml
-```
-```
-
 Plugin will pick up block body and replace it with generated base64 svg diagram.
 
-> `puml` and `plantuml` tags both work.
 
 see more details at <http://plantuml.com/sitemap-language-specification>
-```
