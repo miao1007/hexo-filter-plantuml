@@ -26,12 +26,7 @@ npm install --save hexo-filter-plantuml
 
 ## Minimum configuration
 
-It will send your text to `plantuml.com` for rendering, and the base64-encoded images will be inlined in the html.
-
-```yaml
-plantuml:
-  render: "PlantUMLServer"
-```
+No configuration required. By default, it will send your text to `plantuml.com` for rendering, and the base64-encoded images will be inlined in the html.
 
 ## Advanced configuration
 

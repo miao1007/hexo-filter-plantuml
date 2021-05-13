@@ -12,7 +12,8 @@ function ignore(data) {
 
 hexo.extend.tag.register('plantuml', (args, content) => {
     var config = hexo.config.plantuml
-    switch (config.render) {
+    var render = config.render||'PlantUMLServer'
+    switch (render) {
         case "PlantUMLServer":
             return plantumlRender.serverSideRendering(config, content);
         case "Local":
