@@ -4,7 +4,7 @@
     "description": "Using PlantUML to generate UML Diagram for hexo",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "node lib/plantumlRender.spec.js"
     },
     "keywords": [
         "hexo",
