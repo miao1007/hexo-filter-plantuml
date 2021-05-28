@@ -36,6 +36,7 @@ hexo.extend.filter.register('before_post_render', (data) => {
 }, 9);
 
 hexo.extend.filter.register('after_render:html', (html, { page }) => {
+    const config = hexo.config.plantuml;
     const css = `
         .${config.className} {
             display: block;
