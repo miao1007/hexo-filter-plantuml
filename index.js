@@ -12,7 +12,7 @@ function ignore(data) {
 
 hexo.extend.tag.register('plantuml', (args, content) => {
     var config = hexo.config.plantuml
-    var render = config.render||'PlantUMLServer'
+    var render = config.render || 'PlantUMLServer'
     switch (render) {
         case "PlantUMLServer":
             return plantumlRender.serverSideRendering(config, content);
@@ -21,7 +21,7 @@ hexo.extend.tag.register('plantuml', (args, content) => {
         default:
             throw new Error('hexo.config.plantuml.render must be PlantUMLServer or Local');
     }
-},{
+}, {
     async: true,
     ends: true
 });
@@ -34,3 +34,17 @@ hexo.extend.filter.register('before_post_render', (data) => {
             });
     }
 }, 9);
+
+hexo.extend.filter.register('after_render:html', (html, { page }) => {
+    const config = hexo.config.plantuml;
+    const css = `
+        .${config.className} {
+            display: block;
+            margin: 0 auto;
+        }
+    `;
+    if (config.appendCss) {
+        return html.replace(/<head>(?!<\/head>).+?<\/head>/s, str => str.replace('</head>', `<style>${css}</style></head>`));
+    }
+    return html;
+});
