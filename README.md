@@ -52,6 +52,9 @@ plantuml:
 
   # common options: svg/png
   outputFormat: "svg"
+
+  # class-name for element style. The default style is center-aligned block
+  className: "plantuml"
 ```
 
 #### Client-side
@@ -75,6 +78,9 @@ plantuml:
 
   # common options: svg/png
   outputFormat: "svg"
+
+  # class-name for element style. The default style is center-aligned block
+  className: "plantuml"
 ```
 
 
